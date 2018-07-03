@@ -1,0 +1,44 @@
+slots:
+  city:
+    type: text
+intents:
+  - current_weather
+  - city_slot_info
+  - greet_intent
+  - 'no'
+  - wind_speed
+  - 'yes'
+  - 5day_forecast
+entities:
+  - city
+action_factory: remote
+actions:
+  - utter_webhook_current_weather
+  - utter_webhook_forecast_5day
+  - utter_webhook_forecast_wind
+  - utter_how_to_help
+  - utter_greet
+  - utter_anythingelse
+  - utter_ask_city
+  - utter_thanks
+templates:
+  utter_how_to_help:
+    - text: >-
+        Iam trained about general weather questions. Feel free to try the
+        following:
+      buttons:
+        - title: Current Weather
+          payload: /current_weather
+        - title: Wind Speed
+          payload: /wind_speed
+        - title: Forecast
+          payload: /5day_forecast
+  utter_greet:
+    - text: hi. Welcome to Weather Bot!
+    - text: hello there!!
+  utter_anythingelse:
+    - text: Would you like to try anything else?
+  utter_ask_city:
+    - text: ok Great! what location are you interested in?
+  utter_thanks:
+    - text: Thanks for using Weather Bot!!

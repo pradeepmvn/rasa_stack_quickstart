@@ -1,0 +1,30 @@
+version: '3.0'
+services:
+  rasa-nlu:
+    build: ./rasa_nlu
+    ports:
+      - 5000:5000
+
+  rasa-core:
+    build: ./rasa_core
+    environment:
+      - rasa_nlu_http_server=http://rasa-nlu:5000
+      - rasa_nlu_project_name=WeatherBot
+    ports:
+      - 5005:5005
+
+  rasa-ui:
+    build: ./rasa-ui
+    ports:
+      - 5001:5001
+    environment:
+      - rasanluendpoint=http://rasa-nlu:5000
+      - rasacoreendpoint=http://rasa-core:5005
+    depends_on:
+      - rasa-core
+      - rasa-nlu
+
+  weatherbot-api:
+    build: ./weatherbot-api
+    ports:
+      - 5002:5002
