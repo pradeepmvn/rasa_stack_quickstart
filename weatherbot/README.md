@@ -44,7 +44,7 @@ Prerequisites: Assure that docker-compose up runs with no errors and that the we
 
 Before you build the containers with docker-compose up --build you will need to replace some information in some of the files of the repo.
 
-The first of these two are in the weatherbot/rasa_core folder. The files in this folder hold the required data for Rasa Core (as opposed to Rasa NLU). This data must be stored here and deployed before the rest of the docker containers because currently Rasa UI doesn't support Rasa Core training and data storage in PostgreSQL. The intents, stories, actions, and entities here must match the ones you train your Rasa NLU model with in Rasa UI.
+The first of these are in the weatherbot/rasa_core folder. The files in this folder hold the required data for Rasa Core (as opposed to Rasa NLU). This data must be stored here and deployed before the rest of the docker containers because currently Rasa UI doesn't support Rasa Core training and data storage in PostgreSQL. The intents, stories, actions, and entities here must match the ones you train your Rasa NLU model with in Rasa UI.
 
 
 #### weatherbot/rasa_core/data/domain.yml
@@ -158,4 +158,4 @@ You should be able to replicate similar messages as below: http://localhost:5001
 
 If you check your terminal you should see all of the debugging information as well! You can also customize the CSS of the bot to your heart's desire.
 
-Happy botting! 
+Happy botting!
