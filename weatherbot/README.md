@@ -151,4 +151,11 @@ Now on the Agent page, it should look something like this:
 
 ![Screenshot1](https://i.imgur.com/sxVbImN.png)
 
-Now go to the Training page, train your bot, and it should work perfectly!
+Now go to the Training page, train your bot, and navigate to
+You should be able to replicate similar messages as below: http://localhost:5001/bot-demo/
+
+![Screenshot1](https://i.imgur.com/eSspnE5.png)
+
+If you check your terminal you should see all of the debugging information as well! You can also customize the CSS of the bot to your heart's desire.
+
+Happy botting! 
